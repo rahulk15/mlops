@@ -27,14 +27,16 @@ def predict(data):
 
 def api_response(request):
     try:
-        data = np.array(list(request.json.values())).tolist()
+        data = np.array([list(request.json.values())])
         response = predict(data)
         response = {"response":response}
-        return jsonify(response)
+        return response
     except Exception as e:
         print(e)
-        error = {"error":e}
+        error = {"error": "Something went wrong !! Try Again"}
         return error
+
+
 
 
 
@@ -50,10 +52,10 @@ def index():
                     return render_template("index.html",response=response)
                 elif request.json:
                     response = api_response(request)
-                    return response
+                    return jsonify(response)
             except Exception as e:
                 print(e)
-                error = {"error":e }
+                error = {"error":"something went wrong!! Try Again"}
                 return render_template("404.html",error=error)
         else:
             return render_template("index.html")
