@@ -27,4 +27,4 @@ reports:
   params: C:\Users\Rahul kashyap\Ineuron\mlops\report\params.json
   scores: C:\Users\Rahul kashyap\Ineuron\mlops\report\scores.json
 
-webapp_model_dir: C:\Users\Rahul kashyap\Ineuron\mlops\prediction_service\model\model.joblib
+webapp_model_dir: prediction_service/model/model.joblib
