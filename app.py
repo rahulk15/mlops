@@ -33,7 +33,7 @@ def api_response(request):
         return jsonify(response)
     except Exception as e:
         print(e)
-        error = {"error": e}
+        error = {"error":e}
         return error
 
 
